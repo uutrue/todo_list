@@ -22,11 +22,13 @@ const CreateTaskPopup = ({ modal, toggle, save }) => {
 
     const handleSave = (e) => {
         e.preventDefault();
-        let taskObj = {};
-        taskObj["Name"] = taskName;
-        taskObj["Description"] = description;
-        taskObj["Category"] = category;
-        taskObj["Deadline"] = deadline;
+        let taskObj = {
+            Name: taskName,
+            Description: description,
+            Category: category,
+            Deadline: deadline,
+            completed: false // 새로운 태스크는 기본적으로 완료되지 않은 상태로 시작
+        };
         save(taskObj);
     };
 
